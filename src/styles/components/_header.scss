@@ -1,0 +1,153 @@
+.header {
+  z-index: 2;
+  opacity: 90%;
+  background-color: $darkBlue;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s all;
+
+    width: 100%;
+  }
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+
+    @media screen and (min-width: 768px) {
+      height: 100px;
+    }
+  }
+
+  &-logo {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    color: $white;
+    text-transform: uppercase;
+    font-family: $raleway;
+
+    @media screen and (min-width: 768px) {
+      font-size: 28px;
+    }
+
+    &__end {
+      color: $lightBlue;
+    }
+  }
+
+  &-burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
+    &__line {
+      width: 100%;
+      height: 2px;
+      background-color: $white;
+      transition: all 0.3s ease;
+
+      .header-burger-menu.active & {
+        &:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  display: none;
+
+  &__item {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $white;
+    transition: all ease-in-out 0.3s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: $lightBlueHover;
+      }
+    }
+
+    @media screen and (min-width: 920px) {
+      font-size: 13px;
+      margin-top: 4px;
+    }
+  }
+
+  @media screen and (min-width: 920px) {
+    column-gap: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    column-gap: 40px;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    color: $white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: $lightBlueSecond;
+      }
+    }
+  }
+}

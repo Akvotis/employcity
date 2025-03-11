@@ -1,0 +1,76 @@
+section.order 
+    .container 
+        .order-content
+            h2.order-content__header Оформление 
+                span Заказа
+            .order-content__desc Перед заполнением формы ознакомьтесь с нашей схемой работы!
+
+            .order-content-schema
+                .order-content-schema__item
+                    .order-content-schema__item-icon 
+                        +svg('search')
+                    .order-content-schema__item-text Lorem ipsum dolor sit amet
+                    .order-content-schema__item-stepper
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                .order-content-schema__item
+                    .order-content-schema__item-icon
+                        +svg('percents')
+                    .order-content-schema__item-text Сonsecteturadipiscing elit
+                    .order-content-schema__item-stepper
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                .order-content-schema__item
+                    .order-content-schema__item-icon
+                        +svg('file')
+                    .order-content-schema__item-text Sed do eiusmod tempor
+                    .order-content-schema__item-stepper
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                .order-content-schema__item
+                    .order-content-schema__item-icon
+                        +svg('mail')
+                    .order-content-schema__item-text Esse cillum dolore eu fugiat
+                    .order-content-schema__item-stepper
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                        .order-content-schema__item-dot
+                .order-content-schema__item
+                    .order-content-schema__item-icon
+                        +svg('banknote')
+                    .order-content-schema__item-text Excepteur sint occaecat cupidatat non proident
+
+            form(action="#" name="order" method="post").order-content-form
+                .order-content-form-block 
+                    include ../components/select.pug
+                .order-content-form-block
+                    input(type="mail" name="mail" placeholder="Ваш e-mail").order-content-form-block__input
+                .order-content-form-block
+                    input(type="text" name="name" placeholder="Ваше имя").order-content-form-block__input
+
+                .order-content-form-block.order-content-form-block--large
+                    .order-content-form-block__label Sed ut perspiciatis, unde omnis iste natus
+                        span.js-range-value 0 %
+                    input(type="range" name="count" min="0" max="100" value="0").order-content-form-block__range.js-range
+
+                .order-content-form-block
+                    .order-content-form-block-fileload
+                        input(type="file" value="" id="file").order-content-form-block-fileload__input
+                        button.order-content-form-block-fileload__view.js-file-shower 
+                            +svg('fileload')
+                            | Прикрепить файл
+                        button.order-content-form-block-fileload__selected.js-file-selected
+
+                .order-content-form__btns
+                    button(type="submit").order-content-form__btn Отправить

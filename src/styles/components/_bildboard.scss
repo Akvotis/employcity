@@ -1,0 +1,118 @@
+.bildboard {
+  height: 560px;
+  background-image: url(../img/bildboard.webp);
+  background-position-x: 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-content {
+    width: 100%;
+
+    &__head {
+      font-size: 24px;
+      text-transform: uppercase;
+
+      & span {
+        color: $lightBlueSecond;
+      }
+
+      & br {
+        display: none;
+
+        @media screen and (min-width: 768px) {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        font-size: 48px;
+      }
+    }
+
+    &-list {
+      margin-top: 36px;
+
+      &__head {
+        font-size: 14px;
+        font-weight: bold;
+
+        @media screen and (min-width: 920px) {
+          font-size: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+          font-size: 16px;
+        }
+      }
+
+      &-ul {
+        margin-top: 10px;
+
+        &__item {
+          font-size: 14px;
+          font-weight: normal;
+          padding-left: 16px;
+          margin-bottom: 5px;
+          position: relative;
+
+          &::before {
+            content: "-";
+            position: absolute;
+            left: 5px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          @media screen and (min-width: 920px) {
+            font-size: 20px;
+          }
+
+          @media screen and (min-width: 768px) {
+            font-size: 18px;
+            padding-left: 25px;
+          }
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        margin-top: 90px;
+      }
+    }
+
+    &__btns {
+      margin-top: 36px;
+      display: flex;
+      column-gap: 16px;
+
+      @media screen and (min-width: 768px) {
+        margin-top: 80px;
+        column-gap: 30px;
+      }
+    }
+
+    &__btn {
+      &:first-child {
+        @include button-blue;
+      }
+
+      &:last-child {
+        @include button;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      max-width: 780px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 850px;
+    background-position: center;
+  }
+}

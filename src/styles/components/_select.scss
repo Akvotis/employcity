@@ -1,0 +1,109 @@
+.select {
+  position: relative;
+  z-index: 1;
+
+  &__btn {
+    position: relative;
+    display: block;
+
+    border-radius: 3px;
+    background-color: $white;
+    text-decoration: none;
+    width: 100%;
+    padding: 12px 35px 12px 10px;
+    color: $darkBlueThird;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 14px;
+
+    &.active {
+      border-radius: 3px 3px 0 0;
+      border-bottom: none;
+
+      &::after {
+        transform: translateY(-50%) scale(-1);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      background-image: url(../img/arrow.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: translateY(-50%);
+      transition: all ease-in-out 0.3s;
+    }
+
+    @media screen and (min-width: 920px) {
+      font-size: 18px;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  &__drop {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-height: 170px;
+    border-radius: 0 0 3px 3px;
+    border-top: none;
+    position: absolute !important;
+    background: $white;
+    
+    height: 0;
+    transition: all ease-in-out .3s;
+
+    & li {
+      list-style: none;
+      cursor: pointer;
+      display: block;
+      padding-left: 10px;
+
+      & a {
+        display: block;
+        width: 100%;
+        font-size: 14px;
+        line-height: 180%;
+        color: $darkBlueThird;
+        transition: all ease-in-out 0.3s;
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            color: $lightBlue;
+          }
+        }
+
+        @media screen and (min-width: 920px) {
+          font-size: 18px;
+        }
+    
+        @media screen and (min-width: 768px) {
+          font-size: 16px;
+          line-height: 34px;
+        }
+      }
+
+      &.active {
+        a {
+          color: $lightBlue;
+        }
+      }
+    }
+
+    &.active {
+      height: 100%;
+    }
+  }
+}
