@@ -55,7 +55,7 @@ section.order
                 .order-content-form-block 
                     include ../components/select.pug
                 .order-content-form-block
-                    input(type="mail" name="mail" placeholder="Ваш e-mail").order-content-form-block__input
+                    input(type="email" name="email" placeholder="Ваш e-mail").order-content-form-block__input
                 .order-content-form-block
                     input(type="text" name="name" placeholder="Ваше имя").order-content-form-block__input
 
@@ -66,7 +66,7 @@ section.order
 
                 .order-content-form-block
                     .order-content-form-block-fileload
-                        input(type="file" value="" id="file").order-content-form-block-fileload__input
+                        input(type="file" id="file").order-content-form-block-fileload__input
                         button.order-content-form-block-fileload__view.js-file-shower 
                             +svg('fileload')
                             | Прикрепить файл
